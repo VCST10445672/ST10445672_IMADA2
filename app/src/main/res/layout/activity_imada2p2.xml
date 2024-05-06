@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#122ABD"
+    tools:context=".imada2p2">
+
+    <TextView
+        android:id="@+id/txtHunger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="54dp"
+        android:text="Hunger:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnFeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="163dp"
+        android:backgroundTint="#FF0600"
+        android:text="FEED"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHunger" />
+
+    <TextView
+        android:id="@+id/txtClean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="50dp"
+        android:text="Cleanliness:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFeed" />
+
+    <TextView
+        android:id="@+id/dispClean"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="87dp"
+        android:text="100/100"
+        android:textAlignment="viewEnd"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFeed" />
+
+    <Button
+        android:id="@+id/btnWash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="159dp"
+        android:backgroundTint="#FF0600"
+        android:text="WASH"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtClean" />
+
+    <TextView
+        android:id="@+id/txtHappy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="50dp"
+        android:text="Happiness:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnWash" />
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="160dp"
+        android:backgroundTint="#FF0600"
+        android:text="PLAY"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHappy" />
+
+    <ImageView
+        android:id="@+id/imgDisp"
+        android:layout_width="269dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="71dp"
+        android:src="@drawable/wait"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pbrHppy" />
+
+    <ProgressBar
+        android:id="@+id/pbrHunger"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="222dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginEnd="80dp"
+        android:progress="50"
+        android:progressTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFeed" />
+
+    <ProgressBar
+        android:id="@+id/pbrClean"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="222dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="#FFFFFF"
+        android:progress="50"
+        android:progressTint="#FDFDFD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnWash" />
+
+    <ProgressBar
+        android:id="@+id/pbrHppy"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="222dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginEnd="80dp"
+        android:background="#001E88E5"
+        android:progress="0"
+        android:progressTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />
+
+    <TextView
+        android:id="@+id/dispHappy"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="87dp"
+        android:text="0/100"
+        android:textAlignment="viewEnd"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pbrClean" />
+
+    <TextView
+        android:id="@+id/dispHunger"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="87dp"
+        android:text="100/100"
+        android:textAlignment="viewEnd"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#FBF9F9"
+        android:text="X"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:iconTint="#FBFBFB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
