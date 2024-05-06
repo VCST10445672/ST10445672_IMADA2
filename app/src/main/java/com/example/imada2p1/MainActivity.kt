@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 //Background Figure 1: GabrielleHavenDoorHangersSigns. 2020. Welcome Friends Snoopy Woodstock Door
 // Hanger.
         val btnContinue = findViewById<Button>(R.id.btnContinue)
-
+        //The button is used to go to the next page
         btnContinue.setOnClickListener {    //The IIE. 2024.
             val intent = Intent(this, imada2p2::class.java)
             startActivity(intent)
