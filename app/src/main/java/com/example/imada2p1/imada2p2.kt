@@ -12,6 +12,7 @@ import android.widget.Toast
 
 class imada2p2 : AppCompatActivity() {
     //The IIE. 2024.
+    //These variable are globle so they can be changed over time or on tick
     private lateinit var i: CountDownTimer
     private lateinit var j: CountDownTimer
     private lateinit var imgDisp: ImageView
@@ -41,7 +42,8 @@ class imada2p2 : AppCompatActivity() {
         pbrHunger = findViewById<ProgressBar>(R.id.pbrHunger)
         pbrHappy = findViewById<ProgressBar>(R.id.pbrHppy)
         imgDisp = findViewById<ImageView>(R.id.imgDisp)
-
+        
+        //in the object is used to decrease the variables over time
         i = object : CountDownTimer(Long.MAX_VALUE, 2000) {
             override fun onTick(millisUntilFinished: Long) {
                 //The IIE. 2024.
@@ -63,11 +65,12 @@ class imada2p2 : AppCompatActivity() {
 
             }
 
-            override fun onFinish() {
+            override fun onFinish() {    //Prevent data overflow
                 i.cancel()
             }
         }
 //Ved. 2020.
+        //the object is used to test if the pet is sad or not
         j = object : CountDownTimer(Long.MAX_VALUE, 5000) {
             override fun onTick(millisUntilFinished: Long) {
                 //The IIE. 2024.
@@ -75,24 +78,26 @@ class imada2p2 : AppCompatActivity() {
                     imgDisp.setImageResource(R.drawable.sad)    //Figure 5: Johansen, F. [s.a].
                                                                 //Disappointed Snoopy.
                     Toast.makeText(this@imada2p2, "The dog is sad!\n" +
-                            "Try feeding, playing or cleaning it", Toast.LENGTH_LONG).show()
+                            "Try feeding, playing or cleaning it", Toast.LENGTH_LONG).show()    //Suggestion on what to do
                 }
                 else {
                     imgDisp.setImageResource(R.drawable.wait)   //Figure 4: BuzzFeed. [s.a]. Disney.
                 }
             }
 
-            override fun onFinish() {
+            override fun onFinish() {    //Prevent data overflow
                 j.cancel()
             }
         }
 //Ved. 2020.
+        //Start the tick down
         i.start()
         j.start()
 
         btnClean.setOnClickListener {   //The IIE. 2024.
             imgDisp.setImageResource(R.drawable.claen)  //Figure 6: Snoopy. [s.a]. Image result for
                                                         //snoopy dog.
+            //Other fields decrese as well                                            
             feed -= 10
             play -= 10
 
@@ -110,6 +115,7 @@ class imada2p2 : AppCompatActivity() {
 
             imgDisp.setImageResource(R.drawable.eat)    //Figure 3: Molina, M. [s.a]. Disney.
 
+            //Other fields decrese as well
             clean -= 10
             play -= 10
 
@@ -128,6 +134,7 @@ class imada2p2 : AppCompatActivity() {
             imgDisp.setImageResource(R.drawable.play)   //Figure 2: Mandeville, C. [s.a]. Snoopy
                                                         //playing sax.
 
+            //Other fields decrese as well                                            
             clean -= 10
             feed -= 10
 
@@ -141,6 +148,7 @@ class imada2p2 : AppCompatActivity() {
             pbrHappy.progress = play    //Chugh, A. 222
         }
 
+        //Close page and go back to home screem
         btnExit.setOnClickListener {    //The IIE. 2024.
             finish()
         }
